@@ -1,0 +1,2 @@
+# What is WWW
+The World Wide Web (commonly known as WWW or "the Web") is a global system of interlinked web pages and multimedia content. It is the graphical, accessible interface that allows you to browse, read, and interact with information on the Internet using a web browser.

@@ -1,0 +1,2 @@
+# What is w3c
+W3C stands for the World Wide Web Consortium, the main international standards organization for the Internet. Founded in 1994 by Web inventor Tim Berners-Lee, it develops open, royalty-free guidelines and protocols to ensure the long-term growth, interoperability, and accessibility of the web for everyone.
