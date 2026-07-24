@@ -1,0 +1,236 @@
+<!-- 1.
+Create a Bootstrap layout for a Flipkart-style product card page: use a container with a row, and display three product cards side by side using the grid system's columns.
+2.
+Build a Zomato restaurant listing page using Bootstrap grid: arrange two restaurant cards per row, each card showing a restaurant name and a short description.<br><br><em><strong>Hint:</strong> Use col-6 inside a row to get two equal columns per row.</em>
+3.
+Design a BookMyShow-like movie details section using Bootstrap: place a movie poster image in one column and movie details (title, genre, rating, and a 'Book Now' button) in the second column, using the grid system.
+4.
+Refactor your 2-column layout to be mobile-friendly: make the columns stack vertically on screens smaller than 576px using Bootstrap's responsive grid classes.<br><br><em><strong>Hint:</strong> Try using col-12 for xs and col-6 for md and above.</em>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Mobile Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bootstrap Layout Tasks</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .product-card,
+        .restaurant-card,
+        .movie-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        .restaurant-card {
+            min-height: 150px;
+        }
+
+        .movie-section img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- TASK 1: Flipkart Style Product Cards -->
+        <h2 class="section-title">Flipkart Style Product Cards</h2>
+
+        <div class="row g-4">
+
+            <!-- Product 1 -->
+            <div class="col-md-4">
+                <div class="product-card text-center">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+                        alt="Running Shoes">
+
+                    <h5 class="mt-3">Running Shoes</h5>
+                    <p class="text-muted">Comfortable sports shoes</p>
+                    <h5 class="text-success">₹1,999</h5>
+
+                    <button class="btn btn-primary">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-md-4">
+                <div class="product-card text-center">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+                        alt="Smart Watch">
+
+                    <h5 class="mt-3">Smart Watch</h5>
+                    <p class="text-muted">Fitness and smart features</p>
+                    <h5 class="text-success">₹2,499</h5>
+
+                    <button class="btn btn-primary">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-4">
+                <div class="product-card text-center">
+                    <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b"
+                        alt="Headphones">
+
+                    <h5 class="mt-3">Wireless Headphones</h5>
+                    <p class="text-muted">High quality sound</p>
+                    <h5 class="text-success">₹1,499</h5>
+
+                    <button class="btn btn-primary">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- TASK 2: Zomato Style Restaurant Listing -->
+        <h2 class="section-title">Zomato Style Restaurant Listing</h2>
+
+        <div class="row g-4">
+
+            <!-- Restaurant 1 -->
+            <div class="col-6">
+                <div class="restaurant-card">
+                    <h4>Spice Garden</h4>
+                    <p>
+                        Delicious North Indian and Punjabi food
+                        with a variety of tasty dishes.
+                    </p>
+
+                    <span class="badge bg-success">4.5 ★</span>
+                </div>
+            </div>
+
+            <!-- Restaurant 2 -->
+            <div class="col-6">
+                <div class="restaurant-card">
+                    <h4>Pizza Hub</h4>
+                    <p>
+                        Fresh and cheesy pizzas with exciting
+                        toppings and combos.
+                    </p>
+
+                    <span class="badge bg-success">4.3 ★</span>
+                </div>
+            </div>
+
+            <!-- Restaurant 3 -->
+            <div class="col-6">
+                <div class="restaurant-card">
+                    <h4>Food Palace</h4>
+                    <p>
+                        Enjoy delicious Chinese, Indian and
+                        continental dishes.
+                    </p>
+
+                    <span class="badge bg-success">4.6 ★</span>
+                </div>
+            </div>
+
+            <!-- Restaurant 4 -->
+            <div class="col-6">
+                <div class="restaurant-card">
+                    <h4>Royal Thali</h4>
+                    <p>
+                        Traditional Indian thali with authentic
+                        flavors and unlimited food.
+                    </p>
+
+                    <span class="badge bg-success">4.7 ★</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- TASK 3 & 4: BookMyShow Movie Details -->
+        <h2 class="section-title">
+            BookMyShow Style Movie Details
+        </h2>
+
+        <!--
+            col-12 = Mobile screen par full width
+            col-md-6 = Medium screen aur usse badi screen par half width
+        -->
+
+        <div class="row g-4 movie-section">
+
+            <!-- Movie Poster -->
+            <div class="col-12 col-md-6 text-center">
+
+                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba"
+                    alt="Movie Poster">
+
+            </div>
+
+            <!-- Movie Details -->
+            <div class="col-12 col-md-6">
+
+                <h1>Avengers: Endgame</h1>
+
+                <p>
+                    <strong>Genre:</strong>
+                    Action, Adventure, Science Fiction
+                </p>
+
+                <p>
+                    <strong>Rating:</strong>
+                    ⭐ 4.8/5
+                </p>
+
+                <p>
+                    Earth's mightiest heroes come together
+                    for an epic battle to save the universe.
+                </p>
+
+                <button class="btn btn-danger btn-lg">
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+/* Bootstrap ke default primary button ko override karna */
+
+.btn-primary {
+    background-color: #e91e63;
+    border-color: #e91e63;
+}
+
+/* Hover effect */
+
+.btn-primary:hover {
+    background-color: #c2185b;
+    border-color: #c2185b;
+}
+
+
+/* Product images ka fixed height */
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+
+/* Dark mode me cards readable rahen */
+
+.bg-dark .card {
+    background-color: #212529;
+    color: white;
+}

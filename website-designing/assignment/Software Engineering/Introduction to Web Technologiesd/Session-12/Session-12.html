@@ -1,0 +1,802 @@
+<!-- 1.
+Create a static landing page for a music artist using HTML and CSS, featuring their profile image, a short bio, and three social media buttons styled with Bootstrap icons.
+2.
+Use Bootstrap's grid system to arrange three featured playlists (like Spotify) in a responsive row, each with a cover image, playlist name, and a 'Listen Now' button.
+3.
+Design a Flipkart-style product showcase section with four product cards in a row using Bootstrap card components, ensuring the layout collapses to two cards per row on mobile screens.<br><br><em><strong>Hint:</strong> Use Bootstrap's col-md-3 and col-6 classes for responsiveness.</em>
+4.
+Refactor your landing page to include a sticky navigation bar at the top using Bootstrap's navbar component, with links to Home, About, and Contact sections.
+5.
+Add a footer to your page with Instagram-style social icons and ensure the entire layout remains visually cohesive by applying a consistent color scheme using Bootstrap utility classes.
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Melody Star - Music Artist</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        /* ================= BODY ================= */
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .navbar-brand {
+            font-size: 24px;
+        }
+
+
+        /* ================= HERO SECTION ================= */
+
+        .hero {
+            min-height: 500px;
+            padding: 80px 20px;
+
+            background: linear-gradient(
+                135deg,
+                #212529,
+                #6f42c1
+            );
+
+            color: white;
+        }
+
+        .artist-img {
+            width: 230px;
+            height: 230px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 6px solid white;
+        }
+
+
+        /* ================= SOCIAL BUTTONS ================= */
+
+        .social-btn {
+            width: 48px;
+            height: 48px;
+
+            border-radius: 50%;
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin: 5px;
+
+            font-size: 22px;
+
+            text-decoration: none;
+
+            color: white;
+
+            border: none;
+        }
+
+        .social-btn:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+
+
+        /* ================= PLAYLIST ================= */
+
+        .playlist-card {
+            transition: 0.3s;
+        }
+
+        .playlist-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .playlist-card img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+
+        /* ================= PRODUCT CARDS ================= */
+
+        .product-card {
+            height: 100%;
+
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            height: 220px;
+
+            width: 100%;
+
+            object-fit: cover;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background-color: #212529;
+        }
+
+        footer a {
+            color: white;
+
+            text-decoration: none;
+
+            display: inline-block;
+
+            margin: 0 10px;
+
+            font-size: 25px;
+        }
+
+        footer a:hover {
+            color: #dc3545;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================================= -->
+    <!-- NAVBAR -->
+    <!-- ================================================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="#home">
+
+                <i class="bi bi-music-note-beamed"></i>
+
+                Melody Star
+
+            </a>
+
+
+            <!-- Mobile Hamburger Button -->
+
+            <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <!-- Navbar Links -->
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active" href="#home">
+                            Home
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#about">
+                            About
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#playlists">
+                            Playlists
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#products">
+                            Products
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#contact">
+                            Contact
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================================================= -->
+    <!-- HERO / ARTIST SECTION -->
+    <!-- ================================================= -->
+
+    <section id="home" class="hero">
+
+        <div class="container">
+
+            <div class="row align-items-center text-center text-lg-start">
+
+
+                <!-- Artist Image -->
+
+                <div class="col-lg-5 text-center mb-4 mb-lg-0">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=500&q=80"
+                        class="artist-img"
+                        alt="Music Artist">
+
+                </div>
+
+
+                <!-- Artist Details -->
+
+                <div class="col-lg-7">
+
+                    <p class="text-warning fw-bold">
+                        OFFICIAL ARTIST WEBSITE
+                    </p>
+
+
+                    <h1 class="display-3 fw-bold">
+                        Melody Star
+                    </h1>
+
+
+                    <p class="lead">
+                        Singer • Songwriter • Music Producer
+                    </p>
+
+
+                    <p id="about">
+
+                        Melody Star is a passionate music artist known
+                        for creating soulful melodies and energetic tracks.
+
+                        Her music combines pop, electronic,
+                        and acoustic sounds.
+
+                    </p>
+
+
+                    <!-- Social Buttons -->
+
+                    <div class="mt-4">
+
+
+                        <!-- Instagram -->
+
+                        <a href="#"
+                            class="btn btn-danger social-btn"
+                            aria-label="Instagram">
+
+                            <i class="bi bi-instagram"></i>
+
+                        </a>
+
+
+                        <!-- Facebook -->
+
+                        <a href="#"
+                            class="btn btn-primary social-btn"
+                            aria-label="Facebook">
+
+                            <i class="bi bi-facebook"></i>
+
+                        </a>
+
+
+                        <!-- X / Twitter -->
+
+                        <a href="#"
+                            class="btn btn-dark social-btn"
+                            aria-label="X">
+
+                            <i class="bi bi-twitter-x"></i>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- FEATURED PLAYLISTS -->
+    <!-- ================================================= -->
+
+    <section id="playlists" class="py-5 bg-light">
+
+        <div class="container">
+
+
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold text-dark">
+                    Featured Playlists
+                </h2>
+
+                <p class="text-muted">
+                    Listen to the latest collections and popular songs
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+
+                <!-- PLAYLIST 1 -->
+
+                <div class="col-md-4">
+
+                    <div class="card playlist-card shadow h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80"
+                            class="card-img-top"
+                            alt="Party Playlist">
+
+
+                        <div class="card-body">
+
+                            <h5 class="card-title fw-bold">
+                                Party Hits
+                            </h5>
+
+
+                            <p class="card-text text-muted">
+
+                                Dance and enjoy the latest
+                                energetic tracks.
+
+                            </p>
+
+
+                            <button class="btn btn-success">
+
+                                <i class="bi bi-play-fill"></i>
+
+                                Listen Now
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PLAYLIST 2 -->
+
+                <div class="col-md-4">
+
+                    <div class="card playlist-card shadow h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=600&q=80"
+                            class="card-img-top"
+                            alt="Chill Playlist">
+
+
+                        <div class="card-body">
+
+                            <h5 class="card-title fw-bold">
+                                Chill Vibes
+                            </h5>
+
+
+                            <p class="card-text text-muted">
+
+                                Relax with peaceful
+                                and soothing music.
+
+                            </p>
+
+
+                            <button class="btn btn-success">
+
+                                <i class="bi bi-play-fill"></i>
+
+                                Listen Now
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PLAYLIST 3 -->
+
+                <div class="col-md-4">
+
+                    <div class="card playlist-card shadow h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80"
+                            class="card-img-top"
+                            alt="Live Music Playlist">
+
+
+                        <div class="card-body">
+
+                            <h5 class="card-title fw-bold">
+                                Live Sessions
+                            </h5>
+
+
+                            <p class="card-text text-muted">
+
+                                Experience amazing
+                                live performances.
+
+                            </p>
+
+
+                            <button class="btn btn-success">
+
+                                <i class="bi bi-play-fill"></i>
+
+                                Listen Now
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- PRODUCT SHOWCASE -->
+    <!-- ================================================= -->
+
+    <section id="products" class="py-5">
+
+
+        <div class="container">
+
+
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold text-primary">
+                    Artist Merchandise
+                </h2>
+
+                <p class="text-muted">
+                    Shop official Melody Star products
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+
+                <!-- PRODUCT 1 -->
+
+                <div class="col-6 col-md-3">
+
+                    <div class="card product-card shadow-sm">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80"
+                            class="card-img-top"
+                            alt="Artist T-Shirt">
+
+
+                        <div class="card-body">
+
+                            <h6 class="card-title">
+                                Artist T-Shirt
+                            </h6>
+
+
+                            <p class="text-success fw-bold">
+                                ₹799
+                            </p>
+
+
+                            <button class="btn btn-primary btn-sm w-100">
+                                Buy Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PRODUCT 2 -->
+
+                <div class="col-6 col-md-3">
+
+                    <div class="card product-card shadow-sm">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80"
+                            class="card-img-top"
+                            alt="Music Shoes">
+
+
+                        <div class="card-body">
+
+                            <h6 class="card-title">
+                                Music Edition Shoes
+                            </h6>
+
+
+                            <p class="text-success fw-bold">
+                                ₹2,499
+                            </p>
+
+
+                            <button class="btn btn-primary btn-sm w-100">
+                                Buy Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PRODUCT 3 -->
+
+                <div class="col-6 col-md-3">
+
+                    <div class="card product-card shadow-sm">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80"
+                            class="card-img-top"
+                            alt="Music Watch">
+
+
+                        <div class="card-body">
+
+                            <h6 class="card-title">
+                                Music Watch
+                            </h6>
+
+
+                            <p class="text-success fw-bold">
+                                ₹1,999
+                            </p>
+
+
+                            <button class="btn btn-primary btn-sm w-100">
+                                Buy Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PRODUCT 4 - STAR PERFUME -->
+
+                <div class="col-6 col-md-3">
+
+                    <div class="card product-card shadow-sm">
+
+
+                        <!-- Reliable perfume image -->
+
+                        <img
+                            src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=500&q=80"
+                            class="card-img-top"
+                            alt="Star Perfume">
+
+
+                        <div class="card-body">
+
+                            <h6 class="card-title">
+                                Star Perfume
+                            </h6>
+
+
+                            <p class="text-success fw-bold">
+                                ₹1,299
+                            </p>
+
+
+                            <button class="btn btn-primary btn-sm w-100">
+                                Buy Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- FOOTER -->
+    <!-- ================================================= -->
+
+    <footer id="contact" class="text-white text-center py-4">
+
+
+        <div class="container">
+
+
+            <h5 class="fw-bold">
+                Melody Star
+            </h5>
+
+
+            <p>
+                Follow the music. Feel the rhythm.
+            </p>
+
+
+            <!-- Social Icons -->
+
+            <div class="social-icons">
+
+
+                <!-- Instagram -->
+
+                <a href="#" aria-label="Instagram">
+
+                    <i class="bi bi-instagram"></i>
+
+                </a>
+
+
+                <!-- Facebook -->
+
+                <a href="#" aria-label="Facebook">
+
+                    <i class="bi bi-facebook"></i>
+
+                </a>
+
+
+                <!-- X -->
+
+                <a href="#" aria-label="X">
+
+                    <i class="bi bi-twitter-x"></i>
+
+                </a>
+
+
+                <!-- YouTube -->
+
+                <a href="#" aria-label="YouTube">
+
+                    <i class="bi bi-youtube"></i>
+
+                </a>
+
+
+            </div>
+
+
+            <hr>
+
+
+            <p class="mb-0">
+
+                © 2026 Melody Star.
+                All Rights Reserved.
+
+            </p>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+</body>
+
+</html>

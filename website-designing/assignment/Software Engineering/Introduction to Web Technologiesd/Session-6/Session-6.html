@@ -1,0 +1,525 @@
+<!-- 1.
+Create an HTML file that displays a Zomato-style restaurant card with a restaurant name, cuisine type, and rating. Use CSS to add margin, padding, and a visible border to the card so that each section is clearly separated.
+2.
+Design a Flipkart-style product tile with an image, product name, and price. Use different display properties (block, inline-block, none) to control the layout of the product name and price, and hide the price when a specific CSS class is added.<br><br><em><strong>Hint:</strong> Try toggling the class in your HTML to see the effect.</em>
+3.
+Build a fixed-position WhatsApp chat notification badge at the bottom right corner of the screen. Use position: fixed and appropriate margin and padding to ensure it stays visible even when scrolling.
+4.
+Create a BookMyShow movie poster grid where each poster uses position: relative. Add a 'New' badge to the top-left corner of one poster using position: absolute, so it overlays the image correctly.<br><br><em><strong>Hint:</strong> Use top and left properties with position: absolute inside a relatively positioned parent.</em>
+5.
+Refactor your CSS for any one of the above tasks to reduce repeated margin and padding values by using a reusable CSS class. Explain in a comment how this improves maintainability.
+ -->
+
+ <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Restaurant, Product, WhatsApp & Movie Grid</title>
+
+<style>
+
+    /* ================================
+       GLOBAL RESET
+    ================================= */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f5f5f5;
+        color: #222;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        margin-bottom: 15px;
+    }
+
+    hr {
+        margin: 40px 0;
+        border: none;
+        border-top: 1px solid #ddd;
+    }
+
+
+    /* ================================
+       REUSABLE SPACING CLASS
+    ================================= */
+
+    .spacing {
+        margin: 20px;
+        padding: 20px;
+    }
+
+
+    /* ================================
+       1. RESTAURANT CARD
+    ================================= */
+
+    .restaurant-card {
+        width: 100%;
+        max-width: 360px;
+
+        margin: 20px 0;
+        padding: 20px;
+
+        background-color: white;
+
+        border: 2px solid #ddd;
+        border-radius: 12px;
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+        transition: 0.3s;
+    }
+
+    .restaurant-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .restaurant-card h3 {
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+
+    .cuisine {
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    .rating {
+        display: inline-block;
+
+        background-color: #198754;
+        color: white;
+
+        padding: 7px 14px;
+        border-radius: 6px;
+
+        font-weight: bold;
+    }
+
+
+    /* ================================
+       2. PRODUCT TILE
+    ================================= */
+
+    .product-tile {
+        width: 100%;
+        max-width: 340px;
+
+        margin: 20px 0;
+        padding: 20px;
+
+        background-color: white;
+
+        border: 2px solid #ddd;
+        border-radius: 12px;
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+        transition: 0.3s;
+    }
+
+    .product-tile:hover {
+        transform: translateY(-5px);
+    }
+
+    .product-tile img {
+        width: 100%;
+        height: 220px;
+
+        object-fit: cover;
+
+        display: block;
+
+        border-radius: 8px;
+    }
+
+    /* Block display */
+    .product-name {
+        display: block;
+
+        margin-top: 15px;
+
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    /* Inline-block display */
+    .price {
+        display: inline-block;
+
+        margin-top: 12px;
+        padding: 8px 14px;
+
+        background-color: #ffe500;
+
+        border-radius: 5px;
+
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    /* Price hide karne ke liye */
+    .hidden-price {
+        display: none;
+    }
+
+
+    /* ================================
+       3. FIXED WHATSAPP BADGE
+    ================================= */
+
+    .whatsapp-badge {
+        position: fixed;
+
+        right: 20px;
+        bottom: 20px;
+
+        padding: 14px 20px;
+
+        background-color: #25D366;
+        color: white;
+
+        border-radius: 30px;
+
+        font-weight: bold;
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+        z-index: 1000;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+    }
+
+    .whatsapp-badge:hover {
+        transform: scale(1.08);
+    }
+
+
+    /* ================================
+       4. MOVIE POSTER GRID
+    ================================= */
+
+    .movie-grid {
+        display: grid;
+
+        grid-template-columns: repeat(3, minmax(180px, 220px));
+
+        gap: 20px;
+
+        margin-top: 20px;
+    }
+
+    .movie-poster {
+        position: relative;
+
+        background-color: white;
+
+        border: 2px solid #ddd;
+        border-radius: 10px;
+
+        overflow: hidden;
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+        transition: 0.3s;
+    }
+
+    .movie-poster:hover {
+        transform: translateY(-5px);
+    }
+
+    .movie-poster img {
+        width: 100%;
+        height: 300px;
+
+        display: block;
+
+        object-fit: cover;
+    }
+
+    /* Absolute New Badge */
+    .new-badge {
+        position: absolute;
+
+        top: 10px;
+        left: 10px;
+
+        padding: 6px 12px;
+
+        background-color: red;
+        color: white;
+
+        border-radius: 5px;
+
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+
+    /* ================================
+       5. REUSABLE CLASS DEMO
+    ================================= */
+
+    .spacing-box {
+        max-width: 700px;
+
+        border: 2px solid black;
+
+        background-color: white;
+
+        border-radius: 10px;
+    }
+
+
+    /* ================================
+       RESPONSIVE DESIGN
+    ================================= */
+
+    @media (max-width: 768px) {
+
+        body {
+            padding: 15px;
+        }
+
+        .movie-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+        h1 {
+            font-size: 26px;
+        }
+
+        h2 {
+            font-size: 21px;
+        }
+
+        .movie-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .movie-poster {
+            max-width: 300px;
+        }
+
+        .whatsapp-badge {
+            right: 15px;
+            bottom: 15px;
+
+            padding: 12px 16px;
+        }
+
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<!-- MAIN HEADING -->
+
+<h1>
+    Restaurant, Product & Movie Cards
+</h1>
+
+
+<!-- =================================
+     1. ZOMATO STYLE RESTAURANT CARD
+================================== -->
+
+<h2>
+    1. Zomato-Style Restaurant Card
+</h2>
+
+<div class="restaurant-card">
+
+    <h3>
+        Spice Garden
+    </h3>
+
+    <p class="cuisine">
+        North Indian • Chinese • Fast Food
+    </p>
+
+    <span class="rating">
+        ⭐ 4.5
+    </span>
+
+</div>
+
+
+<hr>
+
+
+<!-- =================================
+     2. FLIPKART STYLE PRODUCT TILE
+================================== -->
+
+<h2>
+    2. Flipkart-Style Product Tile
+</h2>
+
+<div class="product-tile">
+
+    <img
+        src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80"
+        alt="Smartphone"
+    >
+
+    <span class="product-name">
+        Samsung Galaxy Smartphone
+    </span>
+
+    <!--
+        Price visible:
+        class="price"
+
+        Price hidden:
+        class="price hidden-price"
+    -->
+
+    <span class="price">
+        ₹24,999
+    </span>
+
+</div>
+
+
+<hr>
+
+
+<!-- =================================
+     3. FIXED WHATSAPP NOTIFICATION
+================================== -->
+
+<h2>
+    3. Fixed WhatsApp Notification
+</h2>
+
+<p>
+    Page ko scroll karke dekhiye.
+    WhatsApp badge hamesha bottom-right corner me fixed rahega.
+</p>
+
+<div class="whatsapp-badge">
+    💬 WhatsApp Chat
+</div>
+
+
+<hr>
+
+
+<!-- =================================
+     4. BOOKMYSHOW MOVIE POSTER GRID
+================================== -->
+
+<h2>
+    4. BookMyShow Movie Poster Grid
+</h2>
+
+<div class="movie-grid">
+
+
+    <!-- MOVIE 1 -->
+
+    <div class="movie-poster">
+
+        <img
+            src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80"
+            alt="Movie 1"
+        >
+
+        <span class="new-badge">
+            New
+        </span>
+
+    </div>
+
+
+    <!-- MOVIE 2 -->
+
+    <div class="movie-poster">
+
+        <img
+            src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=500&q=80"
+            alt="Movie 2"
+        >
+
+    </div>
+
+
+    <!-- MOVIE 3 -->
+
+    <div class="movie-poster">
+
+        <img
+            src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=500&q=80"
+            alt="Movie 3"
+        >
+
+    </div>
+
+
+</div>
+
+
+<hr>
+
+
+<!-- =================================
+     5. REUSABLE CSS CLASS
+================================== -->
+
+<h2>
+    5. Reusable Spacing Class Example
+</h2>
+
+<div class="spacing spacing-box">
+
+    <h3>
+        Reusable CSS Class
+    </h3>
+
+    <p style="margin-top: 10px;">
+
+        Is element me
+        <b>.spacing</b>
+        class ka use kiya gaya hai.
+
+        Is class ke andar margin aur padding
+        ek hi jagah define kiye gaye hain.
+
+        Isliye is class ko multiple elements par
+        reuse kiya ja sakta hai.
+
+    </p>
+
+</div>
+
+</body>
+
+</html>

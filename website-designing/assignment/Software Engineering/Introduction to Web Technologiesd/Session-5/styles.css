@@ -1,0 +1,23 @@
+/* Styling all button elements */
+
+button {
+    background-color: #e23744;
+    color: white;
+
+    border: none;
+    border-radius: 25px;
+
+    padding: 12px 25px;
+    margin: 10px;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+
+button:hover {
+    background-color: #b71c1c;
+}

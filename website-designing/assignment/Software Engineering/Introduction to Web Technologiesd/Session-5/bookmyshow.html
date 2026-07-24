@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookMyShow Movie Details</title>
+
+    <!-- Internal CSS -->
+
+    <style>
+
+        /* Light Mode */
+
+        body {
+            margin: 0;
+            padding: 30px;
+
+            font-family: Arial, sans-serif;
+
+            background-color: white;
+            color: #222;
+
+            transition: 0.3s;
+        }
+
+
+        .movie-card {
+            max-width: 500px;
+
+            margin: auto;
+            padding: 25px;
+
+            border-radius: 12px;
+
+            background-color: #f5f5f5;
+
+            box-shadow: 0 4px 10px #ccc;
+
+            transition: 0.3s;
+        }
+
+
+        .movie-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+
+        button {
+            background-color: #e51937;
+            color: white;
+
+            border: none;
+            border-radius: 25px;
+
+            padding: 12px 20px;
+
+            cursor: pointer;
+            font-size: 16px;
+
+            margin-top: 15px;
+        }
+
+
+        /* Dark Mode */
+
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+
+        body.dark-mode .movie-card {
+            background-color: #222;
+            box-shadow: 0 4px 10px #000;
+        }
+
+
+        body.dark-mode button {
+            background-color: #ffca28;
+            color: black;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="movie-card">
+
+        <h1>Avengers: Endgame</h1>
+
+        <img src="https://placehold.co/500x300/222222/ffffff?text=Avengers+Endgame"
+             alt="Avengers Movie Poster">
+
+        <h2>Movie Details</h2>
+
+        <p>
+            Avengers: Endgame is an action-packed superhero movie.
+        </p>
+
+        <p>
+            ⭐ Rating: 4.5/5
+        </p>
+
+        <button>
+            Book Tickets
+        </button>
+
+        <br>
+
+        <button onclick="toggleDarkMode()">
+            Toggle Light/Dark Mode
+        </button>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function toggleDarkMode() {
+
+            document.body.classList.toggle("dark-mode");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

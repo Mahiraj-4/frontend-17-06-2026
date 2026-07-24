@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gamer Tag Bio Link Page</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            padding: 30px;
+            color: white;
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* Gamer Profile */
+        .profile-section {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .profile-section h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .profile-section p {
+            color: #d1d5db;
+        }
+
+        /* Gaming Links */
+        .gaming-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .gaming-links a {
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .gaming-links a:hover {
+            transform: translateY(-5px);
+        }
+
+        .twitch {
+            background-color: #9146ff;
+        }
+
+        .discord {
+            background-color: #5865f2;
+        }
+
+        .steam {
+            background-color: #171a21;
+            border: 1px solid #66c0f4;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: white;
+            color: #222;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .form-section h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #musicLinksForm {
+            display: grid;
+            gap: 15px;
+        }
+
+        /* Input with Platform Icon */
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper img {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+        }
+
+        .input-wrapper input {
+            width: 100%;
+            padding: 14px 14px 14px 50px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .input-wrapper input:focus {
+            border-color: #5865f2;
+        }
+
+        button {
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #111827;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #374151;
+        }
+
+        /* Preview Cards */
+        #previewContainer {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .preview-card {
+            background: white;
+            color: #222;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 6px solid;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .preview-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .preview-card p {
+            margin-bottom: 15px;
+            word-break: break-word;
+            color: #555;
+        }
+
+        .visit-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #111827;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+        }
+
+        /* Platform-specific card colors */
+        .spotify-card {
+            border-color: #1DB954;
+        }
+
+        .youtube-card {
+            border-color: #FF0000;
+        }
+
+        .apple-card {
+            border-color: #555555;
+        }
+
+        .instagram-card {
+            border-color: #E1306C;
+        }
+
+        .linkedin-card {
+            border-color: #0A66C2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .gaming-links {
+                grid-template-columns: 1fr;
+            }
+
+            #previewContainer {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-section h1 {
+                font-size: 26px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1000px) {
+
+            #previewContainer {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- Gamer Tag Profile -->
+        <section class="profile-section">
+
+            <img class="avatar" src="https://i.pravatar.cc/300?img=12" alt="Gamer Avatar">
+
+            <h1>Shadow Gamer</h1>
+
+            <p>🎮 Pro Gamer | Streamer | Esports Enthusiast</p>
+
+        </section>
+
+
+        <!-- Gaming Social Links -->
+        <section class="gaming-links">
+
+            <a href="https://www.twitch.tv/" target="_blank" class="twitch">
+                🎥 Twitch
+            </a>
+
+            <a href="https://discord.com/" target="_blank" class="discord">
+                💬 Discord
+            </a>
+
+            <a href="https://store.steampowered.com/" target="_blank" class="steam">
+                🎮 Steam
+            </a>
+
+        </section>
+
+
+        <!-- Music Links Form -->
+        <section class="form-section">
+
+            <h2>Add Your Music & Social Links</h2>
+
+            <form id="musicLinksForm">
+
+                <!-- Spotify -->
+                <div class="input-wrapper">
+
+                    <img src="https://cdn.simpleicons.org/spotify/1DB954" alt="Spotify Icon">
+
+                    <input type="url" id="spotify" placeholder="Enter Spotify profile URL">
+
+                </div>
+
+
+                <!-- YouTube Music -->
+                <div class="input-wrapper">
+
+                    <img src="https://cdn.simpleicons.org/youtubemusic/FF0000" alt="YouTube Music Icon">
+
+                    <input type="url" id="youtube" placeholder="Enter YouTube Music URL">
+
+                </div>
+
+
+                <!-- Apple Music -->
+                <div class="input-wrapper">
+
+                    <img src="https://cdn.simpleicons.org/applemusic/555555" alt="Apple Music Icon">
+
+                    <input type="url" id="apple" placeholder="Enter Apple Music profile URL">
+
+                </div>
+
+
+                <!-- Instagram -->
+                <div class="input-wrapper">
+
+                    <img src="https://cdn.simpleicons.org/instagram/E1306C" alt="Instagram Icon">
+
+                    <input type="url" id="instagram" placeholder="Enter Instagram profile URL">
+
+                </div>
+
+
+                <!-- LinkedIn -->
+                <div class="input-wrapper">
+
+                    <!-- Fixed LinkedIn Icon -->
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%230A66C2'/%3E%3Cpath fill='white' d='M6.5 8.3A1.5 1.5 0 1 0 6.5 5.3a1.5 1.5 0 0 0 0 3ZM5.2 18.7h2.6v-8.1H5.2v8.1ZM9.4 10.6H12v1.1h.04c.36-.68 1.25-1.4 2.58-1.4 2.76 0 3.27 1.82 3.27 4.19v4.2h-2.6v-3.72c0-.89-.02-2.04-1.24-2.04-1.24 0-1.43.97-1.43 1.97v3.79H10v-8.1Z'/%3E%3C/svg%3E"
+                        alt="LinkedIn Icon">
+
+                    <input type="url" id="linkedin" placeholder="Enter LinkedIn profile URL">
+
+                </div>
+
+
+                <button type="submit">
+                    Add Links
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Preview Cards -->
+        <section id="previewContainer"></section>
+
+    </div>
+
+
+    <script>
+
+        const form = document.getElementById("musicLinksForm");
+
+        const previewContainer =
+            document.getElementById("previewContainer");
+
+
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            previewContainer.innerHTML = "";
+
+
+            const platforms = [
+
+                {
+                    id: "spotify",
+                    name: "Spotify",
+                    className: "spotify-card"
+                },
+
+                {
+                    id: "youtube",
+                    name: "YouTube Music",
+                    className: "youtube-card"
+                },
+
+                {
+                    id: "apple",
+                    name: "Apple Music",
+                    className: "apple-card"
+                },
+
+                {
+                    id: "instagram",
+                    name: "Instagram",
+                    className: "instagram-card"
+                },
+
+                {
+                    id: "linkedin",
+                    name: "LinkedIn",
+                    className: "linkedin-card"
+                }
+
+            ];
+
+
+            platforms.forEach(function (platform) {
+
+                const input =
+                    document.getElementById(platform.id);
+
+                const url =
+                    input.value.trim();
+
+
+                if (url !== "") {
+
+                    const username =
+                        extractUsername(url);
+
+
+                    const card =
+                        document.createElement("div");
+
+                    card.className =
+                        `preview-card ${platform.className}`;
+
+
+                    card.innerHTML = `
+
+                    <h3>${platform.name}</h3>
+
+                    <p>
+                        Username / Handle:
+                        <strong>${username}</strong>
+                    </p>
+
+                    <a
+                        class="visit-btn"
+                        href="${url}"
+                        target="_blank"
+                    >
+                        Visit
+                    </a>
+
+                `;
+
+
+                    previewContainer.appendChild(card);
+
+                }
+
+            });
+
+        });
+
+
+        // Extract username or handle from URL
+        function extractUsername(url) {
+
+            try {
+
+                const urlObject =
+                    new URL(url);
+
+                let path =
+                    urlObject.pathname;
+
+                path =
+                    path.replace(/^\/+|\/+$/g, "");
+
+                if (path === "") {
+
+                    return urlObject.hostname;
+
+                }
+
+                return "@" + path.split("/").pop();
+
+            }
+
+            catch (error) {
+
+                return "Unknown User";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

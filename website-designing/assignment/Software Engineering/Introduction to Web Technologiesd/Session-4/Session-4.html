@@ -1,0 +1,281 @@
+<!-- 1.
+Create an HTML file that uses semantic tags to build a simple blog post layout with <header> for the blog title, <nav> for navigation links (Home, Explore, About), <article> for the main post content, and <footer> for copyright information.
+2.
+Recreate a Zomato-style restaurant listing card using semantic HTML5 tags: use <article> for each restaurant, <header> for the restaurant name, and <footer> for rating and delivery time.
+3.
+Build a Flipkart-style product page section with semantic tags: use <header> for the product title and image, <nav> for category breadcrumbs, <article> for product details and description, and <footer> for offers or warranty info.<br><br><em><strong>Hint:</strong> Focus on the correct use of tags for structure, not just visual layout.</em>
+4.
+Given a non-semantic HTML snippet for a movie review (using only <div> and <span>), refactor it to use appropriate semantic tags like <header>, <nav>, <article>, and <footer> for improved accessibility and SEO.
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML5 Examples</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+        section {
+            background: white;
+            margin: 25px auto;
+            padding: 25px;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background-color: #2874f0;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #222;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        article {
+            padding: 20px;
+            margin-top: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        article header {
+            background-color: transparent;
+            color: #222;
+            padding: 0;
+            text-align: left;
+        }
+
+        article footer {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 12px;
+            margin-top: 15px;
+        }
+
+        .restaurant-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .restaurant-card header {
+            background-color: transparent;
+            color: #222;
+            padding: 0;
+            text-align: left;
+        }
+
+        .product-image {
+            width: 220px;
+            display: block;
+            margin: 15px auto;
+        }
+
+        .movie-review header {
+            background-color: transparent;
+            color: #222;
+            text-align: left;
+            padding: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. Semantic Blog Post Layout -->
+
+    <section>
+        <header>
+            <h1>My Tech Blog</h1>
+            <p>Learning Web Development</p>
+        </header>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Explore</a>
+            <a href="#">About</a>
+        </nav>
+
+        <article>
+            <header>
+                <h2>Introduction to Semantic HTML</h2>
+                <p>Published on July 23, 2026</p>
+            </header>
+
+            <p>
+                Semantic HTML uses meaningful tags to describe the structure
+                and purpose of content. Examples include header, nav, article,
+                section, and footer.
+            </p>
+
+            <p>
+                Using semantic elements improves accessibility, SEO, and
+                code readability.
+            </p>
+        </article>
+
+        <footer>
+            <p>&copy; 2026 My Tech Blog. All Rights Reserved.</p>
+        </footer>
+    </section>
+
+
+    <!-- 2. Zomato-Style Restaurant Listing -->
+
+    <section>
+        <h2>Zomato-Style Restaurant Listings</h2>
+
+        <article class="restaurant-card">
+            <header>
+                <h3>Spice Garden Restaurant</h3>
+            </header>
+
+            <p>Indian, Chinese, North Indian</p>
+            <p>Delicious food with a comfortable dining experience.</p>
+
+            <footer>
+                <strong>⭐ 4.5</strong>
+                <span> | Delivery: 30 minutes</span>
+            </footer>
+        </article>
+
+        <article class="restaurant-card">
+            <header>
+                <h3>Food Paradise</h3>
+            </header>
+
+            <p>Pizza, Burgers, Fast Food</p>
+            <p>Perfect place for quick and tasty meals.</p>
+
+            <footer>
+                <strong>⭐ 4.2</strong>
+                <span> | Delivery: 25 minutes</span>
+            </footer>
+        </article>
+    </section>
+
+
+    <!-- 3. Flipkart-Style Product Page -->
+
+    <section>
+        <header>
+            <h2>Samsung Galaxy Smartphone</h2>
+
+            <img
+                class="product-image"
+                src="https://via.placeholder.com/220"
+                alt="Samsung Galaxy Smartphone">
+        </header>
+
+        <nav aria-label="Breadcrumb">
+            <a href="#">Home</a> &gt;
+            <a href="#">Mobiles</a> &gt;
+            <a href="#">Smartphones</a> &gt;
+            Samsung Galaxy
+        </nav>
+
+        <article>
+            <h3>Samsung Galaxy Smartphone</h3>
+
+            <p>
+                This smartphone features a powerful processor, high-quality
+                camera, long-lasting battery, and a bright display.
+            </p>
+
+            <p>
+                <strong>Price:</strong> ₹24,999
+            </p>
+
+            <p>
+                <strong>Available in:</strong> Black, Blue, Silver
+            </p>
+        </article>
+
+        <footer>
+            <p>
+                🎁 Special Offer: 10% instant discount on selected bank cards
+            </p>
+
+            <p>
+                🛡️ 1 Year Manufacturer Warranty
+            </p>
+        </footer>
+    </section>
+
+
+    <!-- 4. Refactored Movie Review Using Semantic Tags -->
+
+    <section>
+        <article class="movie-review">
+
+            <header>
+                <h2>Movie Review: Interstellar</h2>
+                <p>Rating: ⭐⭐⭐⭐⭐</p>
+            </header>
+
+            <nav aria-label="Movie navigation">
+                <a href="#">Home</a> |
+                <a href="#">Movies</a> |
+                <a href="#">Reviews</a>
+            </nav>
+
+            <article>
+                <h3>Review</h3>
+
+                <p>
+                    Interstellar is a science-fiction movie that explores
+                    space travel, time, love, and humanity's survival.
+                </p>
+
+                <p>
+                    The movie features impressive visuals, powerful storytelling,
+                    and an emotional performance by the cast.
+                </p>
+            </article>
+
+            <footer>
+                <p>Reviewed by: Movie Fan</p>
+                <p>Published: July 23, 2026</p>
+            </footer>
+
+        </article>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2026 Semantic HTML Examples</p>
+    </footer>
+
+</body>
+
+</html>

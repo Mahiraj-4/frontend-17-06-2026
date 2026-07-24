@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f3f6;
+            padding: 30px;
+        }
+
+        .review-box {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            color: #2874f0;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #2874f0;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #1256c4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="review-box">
+        <h1>Write a Product Review</h1>
+
+        <!-- POST method sends form data in the request body -->
+        <form method="POST" action="#">
+
+            <label for="username">Username:</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                required
+            >
+
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating" required>
+                <!-- This option cannot be selected as a valid rating -->
+                <option value="" disabled selected>
+                    Select your rating
+                </option>
+
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select>
+
+            <label for="review">Review Message:</label>
+            <textarea
+                id="review"
+                name="review"
+                rows="6"
+                minlength="20"
+                required
+                placeholder="Write at least 20 characters..."
+            ></textarea>
+
+            <button type="submit">Submit Review</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
