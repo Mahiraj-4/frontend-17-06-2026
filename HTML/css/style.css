@@ -1,0 +1,312 @@
+body 
+{
+margin: 0;
+padding: 0;
+overflow-x: hidden;
+box-sizing: border-box;    
+background-color: aliceblue;
+}
+#header 
+{
+width: 100%;
+height: auto;
+padding: 0px;
+background-color: #348cb3;    
+color: white;
+display: flex;
+flex-wrap: wrap;
+top: 0;
+position: sticky;
+}
+.logo
+{
+width: 80%;
+height: auto; 
+margin-left: 5%; 
+line-height: 0.6;  
+}
+.logo h1 
+{
+color: white;
+font-size: 55px;    
+}
+.logo span 
+{
+font-size: 30px;
+text-align: center;
+margin-left: 5%;    
+}
+.social
+{
+width: 10%;
+height: auto;    
+font-size: 90px;
+}
+#content
+{
+width: 90%;
+height: auto;
+margin: auto;
+margin-top: 5%;    
+}
+.parent 
+{
+width: 100%;
+height: auto;
+margin: auto;
+padding: 10px;
+display: flex;
+flex-wrap: wrap;
+}
+.child1
+{
+width: 30%;
+height: 250px;
+margin: 5px;
+background-color: #d44b42;
+border-radius: 20px; 
+line-height: 0.5;   
+}
+.child2
+{
+width: 30%;
+height: 250px;
+margin: 5px;
+background-color: #356ec4;
+border-radius: 20px;   
+line-height: 0.5;   
+ 
+}
+.child3
+{
+width: 30%;
+height: 250px;
+margin: 5px;
+background-color: #9935c4;
+border-radius: 20px;    
+line-height: 0.5;   
+}
+.child1 p,
+.child2 p,
+.child3 p 
+{
+text-align: center;   
+font-size: 60px; 
+color: white;
+}
+.child1 hr,
+.child2 hr,
+.child3 hr
+{
+width: 80%;
+border: solid 5px white;    
+}  
+.child1 img,
+.child2 img,
+.child3 img 
+{
+width: 80px;
+height: 80px;    
+text-align: center;   
+font-size: 60px; 
+color: white;
+}
+/* create responsive via media query */
+/* mobile breakpoints*/
+@media only screen and (min-width:320px) and (max-width:480px)
+{
+body 
+{
+margin: 0;
+padding: 0;
+overflow-x: hidden;
+box-sizing: border-box;    
+background-color: #348cb3;
+}
+#header 
+{
+width: 100%;
+height: auto;
+padding: 0px;
+background-color: white;    
+color: black;
+display: flex;
+flex-wrap: wrap;
+top: 0;
+position: sticky;
+}
+.logo
+{
+width: 70%;
+height: auto; 
+margin-left: 5%; 
+line-height: 0.6;  
+}
+.logo h1 
+{
+color: black;
+font-size: 45px;    
+}
+.logo span 
+{
+font-size: 22px;
+text-align: center;
+margin-left: 2%;    
+}
+.social
+{
+width: 10%;
+height: auto;    
+font-size: 70px;
+}
+#content
+{
+width: 90%;
+height: auto;
+margin: auto;
+margin-top: 5%;    
+}
+.parent 
+{
+width: 100%;
+height: auto;
+margin: auto;
+padding: 10px;
+display: flex;
+flex-direction: column;
+}
+.child1
+{
+width: 90%;
+height: 250px;
+margin: 5px;
+background-color: #d44b42;
+border-radius: 20px; 
+line-height: 0.5;   
+}
+.child2
+{
+width: 90%;
+height: 250px;
+margin: 5px;
+background-color: #356ec4;
+border-radius: 20px;   
+line-height: 0.5;   
+ 
+}
+.child3
+{
+width: 90%;
+height: 250px;
+margin: 5px;
+background-color: #9935c4;
+border-radius: 20px;    
+line-height: 0.5;   
+}
+
+}
+/* tablet breakpoints*/
+@media only screen and (min-width:481px) and (max-width:768px)
+{
+body 
+{
+margin: 0;
+padding: 0;
+overflow-x: hidden;
+box-sizing: border-box;    
+background-color: #82ad2b;
+}
+#header 
+{
+width: 100%;
+height: auto;
+padding: 0px;
+background-color: black;    
+color: white;
+display: flex;
+flex-wrap: wrap;
+top: 0;
+position: sticky;
+}
+.logo
+{
+width: 70%;
+height: auto; 
+margin-left: 5%; 
+line-height: 0.6;  
+}
+.logo h1 
+{
+color: white;
+font-size: 45px;    
+}
+.logo span 
+{
+font-size: 22px;
+text-align: center;
+margin-left: 2%;    
+}
+.social
+{
+width: 10%;
+height: auto;    
+font-size: 70px;
+}
+#content
+{
+width: 90%;
+height: auto;
+margin: auto;
+margin-top: 5%;    
+}
+.parent 
+{
+width: 100%;
+height: auto;
+margin: auto;
+padding: 10px;
+display: grid;
+grid-template-columns: auto auto auto;
+}
+.child1
+{
+width: 90%;
+height: 250px;
+margin: 5px;
+background-color: #d44b42;
+border-radius: 20px; 
+line-height: 0.5;   
+}
+.child2
+{
+width: 90%;
+height: 250px;
+margin: 5px;
+background-color: #356ec4;
+border-radius: 20px;   
+line-height: 0.5;   
+ 
+}
+.child3
+{
+width: 90%;
+height: 250px;
+margin: 5px;
+background-color: #9935c4;
+border-radius: 20px;    
+line-height: 0.5;   
+}
+    
+}
+
+/* small laptop device breakpoints*/
+@media only screen and (min-width:769px) and (max-width:1024px)
+{
+    
+}
+
+/* large device breakpoints */
+@media only screen and (min-width:1025px) and (max-width:1440px)
+{
+    
+}
