@@ -1,0 +1,9 @@
+CREATE TABLE FoodOrder (
+    order_id INT PRIMARY KEY,
+    restaurant_id INT,
+    user_id INT,
+    order_total DECIMAL(10, 2),
+    CONSTRAINT fk_restaurant 
+        FOREIGN KEY (restaurant_id) 
+        REFERENCES Restaurant(id)
+);

@@ -1,0 +1,7 @@
+SET SQL_SAFE_UPDATES = 0;
+
+UPDATE Restaurants
+SET rating = 4.7
+WHERE name = 'Spice Villa';
+
+SELECT * FROM Restaurants WHERE name = 'Spice Villa';

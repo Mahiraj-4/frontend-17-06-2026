@@ -1,0 +1,1 @@
+SELECT COUNT(*) AS hip_hop_song_count FROM Playlist WHERE genre = 'Hip-Hop';
