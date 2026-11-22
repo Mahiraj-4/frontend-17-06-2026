@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cricket Scorecard - Session 16 (Final)</title>
+  <script src="scorecard.js" defer></script>
+</head>
+<body>
+  <h1>Mumbai Strikers - Batting Scorecard</h1>
+
+  <div>
+    <input id="searchInput" type="text" placeholder="Search batter name (e.g. Rohan)">
+    <button id="searchBtn" type="button">Find Batter</button>
+  </div>
+  <br>
+
+  <div>
+    <span id="findBadge" style="display: inline-block; padding: 6px 10px; background: #eef; border: 1px solid #99c; border-radius: 4px; margin-right: 8px;">Search a batter above</span>
+    <span id="centuryBadge" style="display: inline-block; padding: 6px 10px; background: #fee; border: 1px solid #c99; border-radius: 4px; margin-right: 8px;"></span>
+    <span id="allBattedBadge" style="display: inline-block; padding: 6px 10px; background: #efe; border: 1px solid #9c9; border-radius: 4px;"></span>
+  </div>
+  <br>
+
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Batter Name</th>
+        <th>Runs</th>
+        <th>Balls</th>
+        <th>Strike Rate</th>
+      </tr>
+    </thead>
+    <tbody id="scorecardBody"></tbody>
+  </table>
+
+  <p id="summaryLine" style="font-size: 18px; font-weight: bold;"></p>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resource Shelf - ES Module QA Runner</title>
+</head>
+<body>
+  <h1>QA Test Suite for <code>validate.js</code> (ES Module)</h1>
+  <p>Open <strong>DevTools Console (F12)</strong> to inspect the <code>console.table()</code> results.</p>
+
+  <script type="module">
+    import { validateForm, validateUrl } from "./validate.js";
+
+    const testCases = [
+      {
+        label: 'Empty title ("", https://example.com, Maths)',
+        run: () => validateForm({ title: "", url: "https://example.com", subject: "Maths" }),
+        expected: "Title must be between 3 and 60 characters."
+      },
+      {
+        label: 'Spaces around 2 chars ("  JS  ", https://example.com, JavaScript)',
+        run: () => validateForm({ title: "  JS  ", url: "https://example.com", subject: "JavaScript" }),
+        expected: "Title must be between 3 and 60 characters."
+      },
+      {
+        label: 'Exact 3 chars ("CSS", https://example.com/css, HTML/CSS)',
+        run: () => validateForm({ title: "CSS", url: "https://example.com/css", subject: "HTML/CSS" }),
+        expected: ""
+      },
+      {
+        label: 'Exact 60 chars (60x "A", https://example.com, Science)',
+        run: () => validateForm({ title: "A".repeat(60), url: "https://example.com", subject: "Science" }),
+        expected: ""
+      },
+      {
+        label: 'Over limit 61 chars (61x "A", https://example.com, Science)',
+        run: () => validateForm({ title: "A".repeat(61), url: "https://example.com", subject: "Science" }),
+        expected: "Title must be between 3 and 60 characters."
+      },
+      {
+        label: 'Missing subject ("Algebra Notes", https://example.com/maths, "")',
+        run: () => validateForm({ title: "Algebra Notes", url: "https://example.com/maths", subject: "" }),
+        expected: "Please choose a subject."
+      },
+      {
+        label: 'URL Test 1: Missing scheme ("example.com")',
+        run: () => validateUrl("example.com"),
+        expected: "Enter a valid URL"
+      },
+      {
+        label: 'URL Test 2: Non-HTTP protocol ("ftp://files.example.com")',
+        run: () => validateUrl("ftp://files.example.com"),
+        expected: "Only http or https links are allowed"
+      }
+    ];
+
+    const qaResults = testCases.map((tc) => {
+      const actual = tc.run();
+      return {
+        input: tc.label,
+        expected: tc.expected === "" ? "(valid - empty string)" : tc.expected,
+        actual: actual === "" ? "(valid - empty string)" : actual,
+        result: actual === tc.expected ? "PASS" : "FAIL"
+      };
+    });
+
+    console.table(qaResults);
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+[
+  { "id": 1, "title": "The Monsoon Code", "author": "Aarav Mehta", "copies": 3, "branchCity": "Ahmedabad" },
+  { "id": 2, "title": "Echoes of Jaipur", "author": "Kavita Nair", "copies": 2, "branchCity": "Jaipur" },
+  { "id": 3, "title": "Algorithms in Chai", "author": "Rohan Kulkarni", "copies": 1, "branchCity": "Pune" },
+  { "id": 4, "title": "Midnight Train to Mumbai", "author": "Sneha Joshi", "copies": 4, "branchCity": "Mumbai" },
+  { "id": 5, "title": "Stars Over Ladakh", "author": "Vikram Rao", "copies": 2, "branchCity": "Delhi" },
+  { "id": 6, "title": "Silicon Garden", "author": "Ananya Iyer", "copies": 3, "branchCity": "Bengaluru" }
+]

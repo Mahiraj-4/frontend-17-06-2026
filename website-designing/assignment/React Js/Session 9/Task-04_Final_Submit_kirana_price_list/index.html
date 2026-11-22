@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kirana Price List - Session 9 (Final)</title>
+  <script src="prices.js" defer></script>
+</head>
+<body>
+  <h1>Sharma Kirana Store - Price List</h1>
+
+  <div>
+    <button id="addItemBtn">Add Item</button>
+    <button id="removeLastBtn">Remove Last</button>
+    <button id="resetPricesBtn">Reset Prices</button>
+  </div>
+  <br>
+
+  <div>
+    <input id="removeName" type="text" placeholder="Enter item name to delete">
+    <button id="deleteItemBtn">Delete Item</button>
+  </div>
+  <br>
+
+  <form id="updateStockForm">
+    <input id="stockItemName" type="text" placeholder="Item name (e.g. Basmati Rice)" required>
+    <input id="newShelfQty" type="number" min="0" placeholder="New shelf qty" required>
+    <button type="submit">Update Stock</button>
+  </form>
+
+  <p id="message" style="color: red; font-weight: bold;"></p>
+  <div id="priceList"></div>
+
+  <h2>Live JSON View</h2>
+  <pre id="jsonView" style="background: #f4f4f4; padding: 12px; border-radius: 6px;"></pre>
+</body>
+</html>

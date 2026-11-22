@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event RSVP List - Session 17 (Task 2)</title>
+  <script src="rsvp.js" defer></script>
+</head>
+<body>
+  <h1>TechNova College Fest - Guest RSVP List</h1>
+
+  <form id="rsvpForm">
+    <input id="guestName" type="text" placeholder="Guest name" required>
+    <label for="seatCount">Seats: </label>
+    <select id="seatCount">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <button type="submit">Add Guest</button>
+  </form>
+
+  <ul id="guestList"></ul>
+</body>
+</html>

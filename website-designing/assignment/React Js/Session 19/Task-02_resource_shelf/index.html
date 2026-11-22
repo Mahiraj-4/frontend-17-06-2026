@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resource Shelf - Session 19 (Task 2)</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Study Resource Shelf</h1>
+
+    <form id="resourceForm" class="resource-form">
+      <input id="titleInput" type="text" placeholder="Resource title (e.g. MDN JS Guide)" required>
+      <input id="urlInput" type="url" placeholder="https://developer.mozilla.org" required>
+      <select id="subjectSelect">
+        <option value="JavaScript">JavaScript</option>
+        <option value="HTML/CSS">HTML/CSS</option>
+        <option value="Database">Database</option>
+        <option value="DSA">DSA</option>
+      </select>
+      <button type="submit">Add</button>
+    </form>
+
+    <div id="shelf" class="shelf-grid"></div>
+  </div>
+</body>
+</html>

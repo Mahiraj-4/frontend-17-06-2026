@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker Modules - Session 14 (Final)</title>
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <h1>Personal Expense Tracker</h1>
+
+  <form id="expenseForm">
+    <input id="titleInput" type="text" placeholder="Expense title" required>
+    <input id="amountInput" type="number" min="1" placeholder="Amount (₹)" required>
+    <select id="category"></select>
+    <button type="submit">Add Expense</button>
+  </form>
+
+  <ul id="expenseList"></ul>
+  <p id="total" style="font-size: 18px; font-weight: bold;"></p>
+  <p id="budgetStatus" style="font-size: 16px; font-weight: bold;"></p>
+</body>
+</html>

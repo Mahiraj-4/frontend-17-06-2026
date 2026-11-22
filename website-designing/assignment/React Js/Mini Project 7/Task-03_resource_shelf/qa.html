@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resource Shelf - QA Test Runner</title>
+  <script src="validate.js"></script>
+</head>
+<body>
+  <h1>QA Test Suite for <code>validateForm()</code></h1>
+  <p>Open <strong>DevTools Console (F12)</strong> to inspect the <code>console.table()</code> results.</p>
+
+  <script>
+    const testCases = [
+      {
+        label: 'Empty title ("", https://example.com, Maths)',
+        data: { title: "", url: "https://example.com", subject: "Maths" },
+        expected: "Title must be between 3 and 60 characters."
+      },
+      {
+        label: 'Spaces around 2 chars ("  JS  ", https://example.com, JavaScript)',
+        data: { title: "  JS  ", url: "https://example.com", subject: "JavaScript" },
+        expected: "Title must be between 3 and 60 characters."
+      },
+      {
+        label: 'Exact 3 chars ("CSS", https://example.com/css, HTML/CSS)',
+        data: { title: "CSS", url: "https://example.com/css", subject: "HTML/CSS" },
+        expected: ""
+      },
+      {
+        label: 'Invalid URL without scheme ("Algebra", "example.com", Maths)',
+        data: { title: "Algebra", url: "example.com", subject: "Maths" },
+        expected: "Enter a valid URL"
+      },
+      {
+        label: 'FTP URL ("Algebra", "ftp://files.example.com", Maths)',
+        data: { title: "Algebra", url: "ftp://files.example.com", subject: "Maths" },
+        expected: "Only http or https links are allowed"
+      },
+      {
+        label: 'Missing subject ("Algebra Notes", "https://example.com/maths", "")',
+        data: { title: "Algebra Notes", url: "https://example.com/maths", subject: "" },
+        expected: "Please choose a subject."
+      }
+    ];
+
+    const qaResults = testCases.map((tc) => {
+      const actual = validateForm(tc.data);
+      return {
+        input: tc.label,
+        expected: tc.expected === "" ? "(valid - empty string)" : tc.expected,
+        actual: actual === "" ? "(valid - empty string)" : actual,
+        result: actual === tc.expected ? "PASS" : "FAIL"
+      };
+    });
+
+    console.table(qaResults);
+  </script>
+</body>
+</html>

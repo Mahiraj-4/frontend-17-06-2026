@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resource Shelf - QA Test Runner</title>
+  <script src="validate.js"></script>
+</head>
+<body>
+  <h1>QA Test Suite for <code>validateForm()</code></h1>
+  <p>Open <strong>DevTools Console (F12)</strong> to inspect the <code>console.table()</code> results.</p>
+
+  <script>
+    const testCases = [
+      {
+        label: 'Empty title ("", Maths)',
+        data: { title: "", subject: "Maths" },
+        expected: "Title must be between 3 and 60 characters."
+      },
+      {
+        label: 'Spaces around 2 chars ("  JS  ", JavaScript)',
+        data: { title: "  JS  ", subject: "JavaScript" },
+        expected: "Title must be between 3 and 60 characters."
+      },
+      {
+        label: 'Exact 3 chars ("CSS", HTML/CSS)',
+        data: { title: "CSS", subject: "HTML/CSS" },
+        expected: ""
+      },
+      {
+        label: 'Exact 60 chars (60x "A", Science)',
+        data: { title: "A".repeat(60), subject: "Science" },
+        expected: ""
+      },
+      {
+        label: 'Over limit 61 chars (61x "A", Science)',
+        data: { title: "A".repeat(61), subject: "Science" },
+        expected: "Title must be between 3 and 60 characters."
+      },
+      {
+        label: 'Missing subject ("Algebra Notes", "")',
+        data: { title: "Algebra Notes", subject: "" },
+        expected: "Please choose a subject."
+      }
+    ];
+
+    const qaResults = testCases.map((tc) => {
+      const actual = validateForm(tc.data);
+      return {
+        input: tc.label,
+        expected: tc.expected === "" ? "(valid - empty string)" : tc.expected,
+        actual: actual === "" ? "(valid - empty string)" : actual,
+        result: actual === tc.expected ? "PASS" : "FAIL"
+      };
+    });
+
+    console.table(qaResults);
+  </script>
+</body>
+</html>

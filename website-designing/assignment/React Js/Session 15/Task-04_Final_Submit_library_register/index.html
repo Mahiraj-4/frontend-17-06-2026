@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Register - Session 15 (Final)</title>
+  <script src="library.js" defer></script>
+</head>
+<body>
+  <h1 id="libraryHeading">City Central Library</h1>
+
+  <div>
+    <label for="bookSelect">Select Book: </label>
+    <select id="bookSelect"></select>
+
+    <input id="memberInput" type="text" placeholder="Enter member name">
+    <button id="issueBtn" type="button">Issue</button>
+  </div>
+
+  <p id="message" style="font-weight: bold;"></p>
+
+  <h2>Available Books</h2>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Remaining Copies</th>
+      </tr>
+    </thead>
+    <tbody id="bookTableBody"></tbody>
+  </table>
+</body>
+</html>

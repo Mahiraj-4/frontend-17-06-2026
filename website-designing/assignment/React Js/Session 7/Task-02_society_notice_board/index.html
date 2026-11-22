@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Society Notice Board - Session 7 (Task 2)</title>
+  <script src="board.js" defer></script>
+</head>
+<body>
+  <h1 id="boardTitle">Notice Board</h1>
+  <p id="boardDate"></p>
+  <p><span id="noticeCount">Total notices: 3</span></p>
+
+  <select id="category">
+    <option value="Maintenance">Maintenance</option>
+    <option value="Event">Event</option>
+    <option value="Security">Security</option>
+  </select>
+  <input id="newNotice" type="text" placeholder="Enter a new notice...">
+  <button id="addBtn">Add Notice</button>
+
+  <ul id="noticeList">
+    <li class="urgent">Water supply will be suspended tomorrow from 10 AM to 1 PM.</li>
+    <li>Monthly maintenance dues must be cleared before the 15th.</li>
+    <li>Annual General Meeting scheduled in the clubhouse this Saturday.</li>
+  </ul>
+</body>
+</html>

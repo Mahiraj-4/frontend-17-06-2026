@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bus Pass Calculator - Session 18 (Task 1)</title>
+  <script src="pass.js" defer></script>
+</head>
+<body>
+  <h1>City Bus Pass Calculator</h1>
+
+  <form id="passForm">
+    <div>
+      <label for="zoneInput">Zone (1, 2, or 3): </label>
+      <input id="zoneInput" type="number" value="2" required>
+    </div>
+    <br>
+
+    <div>
+      <label>
+        <input id="studentCheckbox" type="checkbox" checked>
+        Student Pass (25% off)
+      </label>
+    </div>
+    <br>
+
+    <button type="submit">Calculate</button>
+  </form>
+
+  <p id="result" style="font-size: 18px; font-weight: bold;"></p>
+</body>
+</html>
