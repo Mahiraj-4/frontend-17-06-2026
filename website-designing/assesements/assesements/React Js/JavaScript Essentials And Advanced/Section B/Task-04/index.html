@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Section B - Task 4: Order Tracker with Persistence</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #restaurantList li {
+      cursor: pointer;
+      padding: 8px 12px;
+      margin-bottom: 6px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      max-width: 350px;
+    }
+    #restaurantList li.favourite {
+      font-weight: bold;
+      background-color: #fef3c7;
+      border-color: #f59e0b;
+      color: #92400e;
+    }
+  </style>
+  <script src="task4_order_tracker.js" defer></script>
+</head>
+<body>
+  <h1>Partner Restaurants</h1>
+  <p>Click a restaurant to save it as your favourite:</p>
+
+  <p id="statusMessage"></p>
+  <ul id="restaurantList"></ul>
+</body>
+</html>

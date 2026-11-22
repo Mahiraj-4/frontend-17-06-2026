@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Section B - Task 3: Live Order Form</title>
+  <script src="task3_live_order.js" defer></script>
+</head>
+<body>
+  <h1>Live Order Form</h1>
+
+  <form id="orderForm" novalidate>
+    <input id="dishNameInput" type="text" placeholder="Enter dish name (e.g. Paneer Tikka)">
+    <input id="quantityInput" type="number" min="1" placeholder="Quantity">
+    <button id="addToCartBtn" type="submit">Add to Cart</button>
+  </form>
+
+  <p id="errorMessage" style="color: red; font-weight: bold;"></p>
+
+  <h2>Live Cart</h2>
+  <ul id="cartList"></ul>
+</body>
+</html>

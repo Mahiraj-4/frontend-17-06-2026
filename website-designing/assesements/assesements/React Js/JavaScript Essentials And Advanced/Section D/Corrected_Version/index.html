@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Corrected Version - Favourite Dishes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    li {
+      padding: 8px;
+      margin-bottom: 6px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .fav {
+      background-color: #fef3c7;
+      border-color: #f59e0b;
+      font-weight: bold;
+    }
+    button {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
+  <script src="fixed_favourites.js" defer></script>
+</head>
+<body>
+  <h1>Dish Favourites (Corrected Version)</h1>
+  <p id="loading">Loading dishes…</p>
+  <p id="error" style="color: red; font-weight: bold;"></p>
+  <ul id="dishList"></ul>
+</body>
+</html>
